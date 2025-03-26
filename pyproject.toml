@@ -1,27 +1,28 @@
 [project]
-name = "pubmed-paper-fetcher"
-version = "0.1.0"
-description = "Your task is to write a Python program to fetch research papers based on a user-specified query. The
-program must identify papers with at least one author affiliated with a pharmaceutical or biotech
-company and return the results as a CSV file."
+name = "pubmed-paper-fetcher-vivek"
+version = "0.1.4"
+description = "Fetch PubMed research papers with pharmaceutical or biotech-affiliated authors and export results as CSV."
 authors = [
-    {name = "vivekranjansahoo",email = "vivekranjansahoo81@gmail.com"}
+    { name = "vivekranjansahoo", email = "vivekranjansahoo81@gmail.com" }
 ]
 readme = "README.md"
 requires-python = ">=3.11"
+
 dependencies = [
-    "requests (>=2.32.3,<3.0.0)",
-    "biopython (>=1.85,<2.0)",
-    "pandas (>=2.2.3,<3.0.0)",
-    "click (>=8.1.8,<9.0.0)",
-    "tqdm (>=4.67.1,<5.0.0)",
-    "openai (>=1.68.2,<2.0.0)",
-    "python-dotenv (>=1.1.0,<2.0.0)"
+    "requests>=2.32.3,<3.0.0",
+    "biopython>=1.85,<2.0",
+    "pandas>=2.2.3,<3.0.0",
+    "tqdm>=4.67.1,<5.0.0",
+    "python-dotenv>=1.1.0,<2.0.0",
+    "openai>=1.68.2,<2.0.0"
 ]
 
 [tool.poetry]
-packages = [{include = "pubmed_paper_fetcher", from = "src"}]
-
+packages = [
+    { include = "pubmed_paper_fetcher", from = "src" },
+    { include = "cli", from = "src" },
+    { include = "config.py" }
+]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
@@ -34,4 +35,4 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-get-papers-list = "src.cli.main:main"
+get-papers-list = "cli.main:main"

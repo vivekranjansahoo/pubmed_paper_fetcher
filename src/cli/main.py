@@ -1,10 +1,10 @@
 import argparse
 import json
 import time
-from src.pubmed_paper_fetcher.fetch import fetch_pubmed_papers
-from src.pubmed_paper_fetcher.process import extract_relevant_fields
-from src.pubmed_paper_fetcher.filter import is_non_academic
-from src.pubmed_paper_fetcher.export import save_to_csv
+from pubmed_paper_fetcher.fetch import fetch_pubmed_papers
+from pubmed_paper_fetcher.process import extract_relevant_fields
+from pubmed_paper_fetcher.filter import is_non_academic
+from pubmed_paper_fetcher.export import save_to_csv
 
 def main():
     """
